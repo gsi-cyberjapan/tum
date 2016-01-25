@@ -1,6 +1,6 @@
 # tile upload managerの仕様
 
-タイルアップロードマネージャーの仕様は次のとおりです。  
+タイルアップロードマネージャーの仕様は次のとおりです。    
 
 # tile upload managerの概要
 
