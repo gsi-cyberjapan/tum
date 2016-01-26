@@ -2,21 +2,21 @@
 
 ƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒhƒ}ƒl[ƒWƒƒ[‚Ìd—l‚ÍŸ‚Ì‚Æ‚¨‚è‚Å‚·B
 
-# tile upload manager‚ÌŠT—v
+## tile upload manager‚ÌŠT—v
 
 ’n—‰@’n}ƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒ_‚ÌQÆÀ‘•‚Å‚·B  
 ƒ_ƒEƒ“ƒ[ƒhÏ‚İ‚Ì’n—‰@’n}ƒ^ƒCƒ‹‚ğAmazonDynamoDB‚ğ—p‚¢‚ÄAmazonS3‚ÖƒAƒbƒvƒ[ƒh‚µ‚Ü‚·B  
 Amazon Web Service‚ğ—p‚¢‚é‚½‚ßA‚²g—p‚É‚ÍIAM”FØî•ñiƒAƒNƒZƒXƒL[AƒV[ƒNƒŒƒbƒgƒL[j‚ª•K—v‚Å‚·B@
 
-# tile upload manager‚Ì\¬
+## tile upload manager‚Ì\¬
 
-Ÿtum  
+### Ÿtum
 Eƒ\[ƒXƒR[ƒhˆê®  
 EParams.xml  
 EAwsCredentials.properties  
 
 
-ŸAWS  
+#### ŸAWS
 ES3  
  Amazon Web Service‚ÌƒIƒuƒWƒFƒNƒgƒXƒgƒŒ[ƒWBƒ^ƒCƒ‹‚Ì•Û‘¶æ‚Æ‚µ‚Äg—p‚µ‚Ü‚·B  
 
@@ -25,7 +25,7 @@ Amazon Web Service‚ğ—p‚¢‚é‚½‚ßA‚²g—p‚É‚ÍIAM”FØî•ñiƒAƒNƒZƒXƒL[AƒV[ƒNƒŒƒ
  •Û‘¶‚·‚éî•ñ‚ÍAƒ^ƒCƒ‹‚Ìƒtƒ‹ƒpƒX(xyz/{t}/{z}/{x}/{y}.{ext})AMD5SUMAƒ^ƒCƒ‹‚ÌÀ•W({z}/{x}/{y})Aƒ^ƒCƒ‹‚Ìí—Ş({t})AŠg’£qi{ext}j‚Å‚·B  
 ƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚ÉDynamoDB‚É‚Äƒ^ƒCƒ‹‚Ìƒtƒ‹ƒpƒX‚ÆMD5SUM‚É‚æ‚é“Ë‚«‡‚í‚¹‚ğs‚¢AŠù‚É“o˜^Ï‚İ‚Å‚ ‚ê‚ÎƒAƒbƒvƒ[ƒh‚µ‚È‚¢d‘g‚İ‚Æ‚È‚è‚Ü‚·B  
 
-## Params.xml
+#### Params.xml
 
 Params.xml‚ÍˆÈ‰º‚Ì‚æ‚¤‚Éì¬‚µ‚Ä‚­‚¾‚³‚¢B
 
@@ -41,7 +41,7 @@ Params.xml‚ÍˆÈ‰º‚Ì‚æ‚¤‚Éì¬‚µ‚Ä‚­‚¾‚³‚¢B
 
 input hostAinput port‚É‚Í‚»‚ê‚¼‚êƒvƒƒLƒV‚Ìhost–¼Aƒ|[ƒg”Ô†‚ğ‹LÚ‚µ‚Ä‚­‚¾‚³‚¢B@@
 
-## AwsCredentials.properties
+#### AwsCredentials.properties
 
 AwsCredentials.properties‚ÍˆÈ‰º‚Ì‚æ‚¤‚Éì¬‚µ‚Ä‚­‚¾‚³‚¢B
 
@@ -52,12 +52,12 @@ secretKey = yyy
 
 xxxAyyy‚Í‚»‚ê‚¼‚êIAM”FØî•ñ‚É’u‚«Š·‚¦‚Ä‚­‚¾‚³‚¢B
 
-# tumg—p€”õ
+## tumg—p€”õ
 –{ƒy[ƒW‚Å‚²Ğ‰î‚·‚é•û–@‚Íˆê—á‚Å‚·B  
 ‚È‚¨–{ƒy[ƒW‚Å‚²Ğ‰î‚·‚é•û–@‚ÍWindows‚Å‚Ìg—p‚ğ‘z’è‚µ‚Ä‚¢‚Ü‚·B  
 
 
-**1.AWS‚Ì€”õ**  
+### 1.AWS‚Ì€”õ  
 1-0.AWS‚ÌƒAƒJƒEƒ“ƒg‚ğ‚¨‚¿‚Å‚È‚¢•û‚ÍA‰º‹LURL‚æ‚èƒAƒJƒEƒ“ƒg‚ğì¬‚µ‚Ä‚­‚¾‚³‚¢B  
 https://aws.amazon.com/jp/register-flow/  
 1-1.AdminŒ ŒÀ‚ÌIAMƒ†[ƒU[‚ğì¬‚µAƒAƒNƒZƒXƒL[‚ÆƒV[ƒNƒŒƒbƒgƒL[‚ğæ“¾‚µ‚Ä‚­‚¾‚³‚¢B  
@@ -68,7 +68,7 @@ https://aws.amazon.com/jp/register-flow/
 Eƒ\[ƒgƒL[: md5sum (•¶š—ñ)  
 
 
-**2.tum‚Ì€”õ**  
+### 2.tum‚Ì€”õ  
 ƒ\[ƒXƒR[ƒh‚ÉAmazonS3‚ÌƒoƒPƒbƒg–¼‚âAmazonDynamoDB‚Ìƒe[ƒuƒ‹–¼“™‚ğ‹LÚ‚·‚é•K—v‚ª‚ ‚é‚½‚ßAŠJ”­ŠÂ‹«‚ğ—pˆÓ‚µ‚Ü‚·B  
 
 2-0.Eclipse€”õ  
@@ -84,9 +84,9 @@ https://aws.amazon.com/jp/eclipse/
 2-5.•\¦‚³‚ê‚½ƒtƒHƒ‹ƒ_‚Éƒ\[ƒXƒR[ƒhˆê®‚ğŠi”[‚µAEclipse‚ğÄ‹N“®‚µ‚Ü‚·B  
 2-6.“Ç‚İ‚Ü‚ê‚½ƒ\[ƒXƒR[ƒh‚ğŠm”F‚µA"input your bucket name"‚âinput your table name"‚Æ‚ ‚é‰ÓŠ‚ğu1.AWS‚Ì€”õv‚Åì¬‚µ‚½–¼‘O‚É•ÏX‚µ‚Ü‚·B
 
-# ƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚Ì•û–@
+## ƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚Ì•û–@
 
-**1.Eclipse‚©‚çÀs‚·‚é•û–@**  
+### 1.Eclipse‚©‚çÀs‚·‚é•û–@  
 1-1.Eclipse‚ğ‹N“®‚µ‚Ü‚·Butumg—p€”õv2-1‚Åì¬‚µ‚½ƒvƒƒWƒFƒNƒg‚ğ‰EƒNƒŠƒbƒN‚µA•\¦‚³‚ê‚½ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[‚©‚çuƒGƒNƒXƒvƒ[ƒ‰[‚ÅŠJ‚­v‚ğ‘I‘ğ‚µ‚Ü‚·B  
 1-2.•\¦‚³‚ê‚½ƒtƒHƒ‹ƒ_‚ÉParams.xml‚ğŠi”[‚µ‚Ü‚·BbinƒfƒBƒŒƒNƒgƒŠ“à‚ÉAwsCredentials.properties‚ğŠi”[‚µ‚Ü‚·B  
 1-3.utumg—p€”õv2-1‚Åì¬‚µ‚½ƒvƒƒWƒFƒNƒg‚ğ‰EƒNƒŠƒbƒN‚µA•\¦‚³‚ê‚½ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[‚©‚çuÀsv uÀs‚Ì\¬v‚ğ‘I‘ğ‚µ‚Ü‚·B  
@@ -97,7 +97,7 @@ https://aws.amazon.com/jp/eclipse/
 —á: C:\Users\Administrator\up\xyz\ƒtƒHƒ‹ƒ_‚ÉƒAƒbƒvƒ[ƒh‚·‚éƒ^ƒCƒ‹‚ªŠi”[‚³‚ê‚Ä‚¢‚éê‡  
 tum C:\Users\Administrator\up\xyz
 
-**2.ƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚©‚çÀs‚·‚é•û–@**  
+### 2.ƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚©‚çÀs‚·‚é•û–@  
 2-1.Eclipse‚ğ‹N“®‚µ‚Ü‚·Butumg—p€”õv2-1‚Åì¬‚µ‚½ƒvƒƒWƒFƒNƒg‚ğ‰EƒNƒŠƒbƒN‚µA•\¦‚³‚ê‚½ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[‚©‚çuƒGƒNƒXƒ|[ƒgv‚ğ‘I‘ğ‚µ‚Ü‚·B  
 2-2.uÀs‰Â”\jarƒtƒ@ƒCƒ‹v‚ğ‘I‘ğ‚µA”CˆÓ‚ÌƒGƒNƒXƒ|[ƒgæ‚ğİ’è‚µ‚Ü‚·B  
 2-3.uƒ‰ƒCƒuƒ‰ƒŠ[ˆ—v‚Íu¶¬‚³‚ê‚éJAR‚É•K{ƒ‰ƒCƒuƒ‰ƒŠ[‚ğƒpƒbƒP[ƒWv‚ğ‘I‘ğ‚µ‚Ü‚·B  
@@ -109,12 +109,12 @@ java -jar tum [‘æˆêˆø”] [‘æ“ñˆø”]
 —á: C:\Users\Administrator\up\xyz\ƒtƒHƒ‹ƒ_‚ÉƒAƒbƒvƒ[ƒh‚·‚éƒ^ƒCƒ‹‚ªŠi”[‚³‚ê‚Ä‚¢‚éê‡  
 java -jar tum.jar tum C:\Users\Administrator\up\xyz@@
 
-# –Ú˜^‹y‚ÑƒRƒRƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚Ìd‘g‚İ
+## –Ú˜^‹y‚ÑƒRƒRƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚Ìd‘g‚İ
 –Ú˜^‹y‚ÑƒRƒRƒ^ƒCƒ‹‚ÌÚ‚µ‚¢d—l‚Í‰º‹LURL‚ğ‚²Šm”F‚­‚¾‚³‚¢B  
 https://github.com/gsi-cyberjapan/mokuroku-spec  
 https://github.com/gsi-cyberjapan/cocotile-spec  
 
-**1.–Ú˜^ƒAƒbƒvƒ[ƒh‚Ìd‘g‚İ**  
+### 1.–Ú˜^ƒAƒbƒvƒ[ƒh‚Ìd‘g‚İ  
 –Ú˜^‚É‘‚«‚Ü‚ê‚éƒf[ƒ^‚ÍƒpƒX,ÅIXV,ƒTƒCƒY,MD5SUM‚Å‚·B  
 ‚»‚ê‚ç‚Ìƒf[ƒ^‚ğƒ^ƒCƒ‹í–ˆ‚É1ƒ^ƒCƒ‹‚¸‚ÂS3‚æ‚èæ“¾‚µA1s‚¸‚Â‘‚«o‚·–‚Åmokuroku.csv‚ğì¬‚µ‚Ü‚·B  
 mokuroku.csvì¬Œã‚Ígzip‚É‚Äˆ³k‚µAS3‚Ì{t}iƒ^ƒCƒ‹íjƒtƒHƒ‹ƒ_‚Ì’¼‰º‚ÉƒAƒbƒvƒ[ƒh‚³‚ê‚Ü‚·B  
@@ -127,7 +127,7 @@ java -jar  [‘æˆêˆø”] [‘æ“ñˆø”]
 java -jar tum.jar mokuroku C:\temp@@
 ƒq[ƒvƒƒ‚ƒŠ‚ÌÅ‘å’l‚Í512mˆÈã„§  
 
-**2.ƒRƒRƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚Ìd‘g‚İ**  
+### 2.ƒRƒRƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚Ìd‘g‚İ  
 ƒRƒRƒ^ƒCƒ‹‚É‘‚«‚Ü‚ê‚éƒf[ƒ^‚Í‚»‚ÌÀ•W‚É‘¶İ‚·‚éƒ^ƒCƒ‹‚Ìí—Ş‚Å‚·B  
 ƒ^ƒCƒ‹‚Ìí—Ş–ˆ‚É–Ú˜^‚ğQÆ‚µAÀ•W–ˆ‚ÉƒRƒRƒ^ƒCƒ‹‚ğì¬A‘‚«o‚µ‚ğs‚¢‚Ü‚·B  
 ƒRƒRƒ^ƒCƒ‹ì¬Œã‚ÍAƒoƒPƒbƒg’¼‰º‚ÌcocotileƒtƒHƒ‹ƒ_‚ÉÀ•W–ˆ‚ÌƒtƒHƒ‹ƒ_‚ğì¬‚µA‚»‚ÌƒtƒHƒ‹ƒ_‚ÉƒAƒbƒvƒ[ƒh‚µ‚Ü‚·B  
@@ -140,7 +140,7 @@ java -jar  [‘æˆêˆø”] [‘æ“ñˆø”]
 java -jar tum.jar mokuroku C:\cocotemp@@
 ƒq[ƒvƒƒ‚ƒŠ‚ÌÅ‘å’l‚Í512mˆÈã„§  
 
-# “®ìŠÂ‹«‚É‚Â‚¢‚Ä
+## “®ìŠÂ‹«‚É‚Â‚¢‚Ä
 
 ‰º‹LŠÂ‹«‚É‚Ä“®ìŠm”FÏ‚İ‚Å‚·B
 ‚È‚¨A‘S‚Ä‚ÌŠÂ‹«‚É‚¨‚¯‚é“®ì‚ğ•Ûá‚·‚é‚à‚Ì‚Å‚Í‚ ‚è‚Ü‚¹‚ñB
@@ -152,8 +152,8 @@ java -jar tum.jar mokuroku C:\cocotemp@@
 - ƒCƒ“ƒ^[ƒlƒbƒgŠÂ‹« - íÚ‘±‚Å‚«‚éƒuƒ[ƒhƒoƒ“ƒhŠÂ‹«iƒ‚ƒoƒCƒ‹’[––“™‚Íœ‚­j‚Å‚²—˜—p‚­‚¾‚³‚¢B
 - Java ƒo[ƒWƒ‡ƒ“1.8.0  ƒq[ƒvƒƒ‚ƒŠƒTƒCƒY‚Í512m‚É‚ÄÀs
 
-# ‚²g—p‚Ì‚²’ˆÓ  
-**tumÀs**  
+## d—lã‚Ì’ˆÓ–€  
+### tumÀs  
 - ‘æ“ñˆø”‚Åw’è‚·‚éxyz‚Ü‚Å‚ÌƒpƒX‚ÉAuxyzv‚Æ‚¢‚¤•¶š—ñ‚ğŠÜ‚Ü‚È‚¢‚æ‚¤‚¨Šè‚µ‚Ü‚·B  
 —áj  
 ³C:\test\123\xyz  
@@ -164,7 +164,7 @@ java -jar tum.jar mokuroku C:\cocotemp@@
 ³C:\test\123ƒtƒHƒ‹ƒ_‚ÉuxyzvƒtƒHƒ‹ƒ_‚Ì‚İ  
 ŒëC:\test\123ƒtƒHƒ‹ƒ_‚ÉuxyzvƒtƒHƒ‹ƒ_‚Æuold_xyzvƒtƒHƒ‹ƒ_‚ª‘¶İ  
 
-**cocotileÀs**@@
+### cocotileÀs@@
 - ‘æ“ñˆø”‚Åw’è‚·‚éƒhƒ‰ƒCƒu‚Ì‹ó‚«—e—Ê‚ª500GBˆÈã‚Å‚ ‚é–‚ğ‚²Šm”F‚­‚¾‚³‚¢B•K—v—e—Ê‚Í‘Œ¸‚·‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B  
 
 - “¯ˆêŠÂ‹«‚Åcocotile‚ğ“ñd‚ÉÀs‚µ‚È‚¢‚æ‚¤‚¨Šè‚¢‚µ‚Ü‚·B  
