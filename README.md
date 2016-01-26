@@ -1,58 +1,179 @@
-ï»¿<p><markdown>
-# tile upload managerã®ä»•æ§˜
-[work in progress] tile upload manager
-ã‚¿ã‚¤ãƒ«ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ãƒžãƒãƒ¼ã‚¸ãƒ£ã€ã®ä»•æ§˜ã¯æ¬¡ã®ã¨ãŠã‚Šã§ã™ã€‚
+# tile upload manager‚ÌŽd—l
+
+ƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒhƒ}ƒl[ƒWƒƒ[‚ÌŽd—l‚ÍŽŸ‚Ì‚Æ‚¨‚è‚Å‚·B
+
+# tile upload manager‚ÌŠT—v
+
+’n—‰@’n}ƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒ_‚ÌŽQÆŽÀ‘•‚Å‚·B  
+ƒ_ƒEƒ“ƒ[ƒhÏ‚Ý‚Ì’n—‰@’n}ƒ^ƒCƒ‹‚ðAmazonDynamoDB‚ð—p‚¢‚ÄAmazonS3‚ÖƒAƒbƒvƒ[ƒh‚µ‚Ü‚·B  
+Amazon Web Service‚ð—p‚¢‚é‚½‚ßA‚²Žg—pŽž‚É‚ÍIAM”FØî•ñiƒAƒNƒZƒXƒL[AƒV[ƒNƒŒƒbƒgƒL[j‚ª•K—v‚Å‚·B@
+
+# tile upload manager‚Ì\¬
+
+Ÿtum  
+Eƒ\[ƒXƒR[ƒhˆêŽ®  
+EParams.xml  
+EAwsCredentials.properties  
 
 
-# å¿…è¦ãƒ•ã‚¡ã‚¤ãƒ«
+ŸAWS  
+ES3  
+ Amazon Web Service‚ÌƒIƒuƒWƒFƒNƒgƒXƒgƒŒ[ƒWBƒ^ƒCƒ‹‚Ì•Û‘¶æ‚Æ‚µ‚ÄŽg—p‚µ‚Ü‚·B  
 
- 1. ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ä¸€å¼
- 2. Params.xml
- 3. AwsCredentials.properties
-# Params.xml
-  Params.xmlã¯ä»¥ä¸‹ã®ã‚ˆã†ã«ä½œæˆã—ã¦ãã ã•ã„ã€‚
+EDynamoDB  
+ Amazon Web Service‚ÌƒL[ƒoƒŠƒ…[ƒXƒgƒABƒ^ƒCƒ‹î•ñ‚Ì•Û‘¶æ‚Æ‚µ‚ÄŽg—p‚µ‚Ü‚·B  
+ •Û‘¶‚·‚éî•ñ‚ÍAƒ^ƒCƒ‹‚Ìƒtƒ‹ƒpƒX(xyz/{t}/{z}/{x}/{y}.{ext})AMD5SUMAƒ^ƒCƒ‹‚ÌÀ•W({z}/{x}/{y})Aƒ^ƒCƒ‹‚ÌŽí—Þ({t})AŠg’£Žqi{ext}j‚Å‚·B  
+ƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒhŽž‚ÉDynamoDB‚É‚Äƒ^ƒCƒ‹‚Ìƒtƒ‹ƒpƒX‚ÆMD5SUM‚É‚æ‚é“Ë‚«‡‚í‚¹‚ðs‚¢AŠù‚É“o˜^Ï‚Ý‚Å‚ ‚ê‚ÎƒAƒbƒvƒ[ƒh‚µ‚È‚¢Žd‘g‚Ý‚Æ‚È‚è‚Ü‚·B  
 
-< ?xml version="1.0" encoding="UTF-8"? >
+## Params.xml
 
-< Params >
+Params.xml‚ÍˆÈ‰º‚Ì‚æ‚¤‚Éì¬‚µ‚Ä‚­‚¾‚³‚¢B
 
-ã€€ã€€ < Proxy >
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Params>
+  <Proxy>
+    <Host>input host</Host>
+    <Port>input port</Port>
+  </Proxy>
+</Params>
+```
 
-ã€€ã€€ã€€ã€€< Host >input host< /Host>
+input hostAinput port‚É‚Í‚»‚ê‚¼‚êƒvƒƒLƒV‚Ìhost–¼Aƒ|[ƒg”Ô†‚ð‹LÚ‚µ‚Ä‚­‚¾‚³‚¢B@@
 
-ã€€ã€€ã€€ã€€< Port >input port< /Port>
+## AwsCredentials.properties
 
- ã€€ã€€ã€€< /Proxy>
+AwsCredentials.properties‚ÍˆÈ‰º‚Ì‚æ‚¤‚Éì¬‚µ‚Ä‚­‚¾‚³‚¢B
 
-< /Params>
+```
+accessKey = xxx
+secretKey = yyy
+```
 
-input hostã€input nameã«ã¯ãã‚Œãžã‚Œãƒ—ãƒ­ã‚­ã‚·ã®hoståã€ãƒãƒ¼ãƒˆç•ªå·ã‚’è¨˜è¼‰ã—ã¦ãã ã•ã„ã€‚ã€€ã€€
+xxxAyyy‚Í‚»‚ê‚¼‚êIAM”FØî•ñ‚É’u‚«Š·‚¦‚Ä‚­‚¾‚³‚¢B
 
-
-# AwsCredentials.properties
-AwsCredentials.propertiesã¯ä»¥ä¸‹ã®ã‚ˆã†ã«ä½œæˆã—ã¦ãã ã•ã„ã€‚
-
-  accessKey = xxx
-
-  secretKey = yyy
-
-xxxã€yyyã¯ãã‚Œãžã‚ŒaccessKeyã€secretKeyã«ç½®ãæ›ãˆã¦ãã ã•ã„ã€‚
-
-# å‹•ä½œç’°å¢ƒã«ã¤ã„ã¦
-  ä¸‹è¨˜ç’°å¢ƒã«ã¦å‹•ä½œç¢ºèªæ¸ˆã¿ã§ã™ã€‚
-
-ãªãŠã€å…¨ã¦ã®ç’°å¢ƒã«ãŠã‘ã‚‹å‹•ä½œã‚’ä¿éšœã™ã‚‹ã‚‚ã®ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
+# tumŽg—p€”õ
+–{ƒy[ƒW‚Å‚²Ð‰î‚·‚é•û–@‚Íˆê—á‚Å‚·B  
+‚È‚¨–{ƒy[ƒW‚Å‚²Ð‰î‚·‚é•û–@‚ÍWindows‚Å‚ÌŽg—p‚ð‘z’è‚µ‚Ä‚¢‚Ü‚·B  
 
 
-  Windows7 32bit
+**1.AWS‚Ì€”õ**  
+1-0.AWS‚ÌƒAƒJƒEƒ“ƒg‚ð‚¨Ž‚¿‚Å‚È‚¢•û‚ÍA‰º‹LURL‚æ‚èƒAƒJƒEƒ“ƒg‚ðì¬‚µ‚Ä‚­‚¾‚³‚¢B  
+https://aws.amazon.com/jp/register-flow/  
+1-1.AdminŒ ŒÀ‚ÌIAMƒ†[ƒU[‚ðì¬‚µAƒAƒNƒZƒXƒL[‚ÆƒV[ƒNƒŒƒbƒgƒL[‚ðŽæ“¾‚µ‚Ä‚­‚¾‚³‚¢B  
+1-2.S3‚ÌƒoƒPƒbƒg‚ð1‚Âì¬‚µ‚Ä‚­‚¾‚³‚¢B  
+1-3.DynamoDB‚Ìƒe[ƒuƒ‹‚ð1‚Âì¬‚µ‚Ä‚­‚¾‚³‚¢B  
+‚Ü‚½Aƒe[ƒuƒ‹‚Ìƒp[ƒeƒBƒVƒ‡ƒ“ƒL[Aƒ\[ƒgƒL[‚Í‚»‚ê‚¼‚ê‰º‹L‚Ì‚æ‚¤‚ÉÝ’è‚µ‚Ä‚­‚¾‚³‚¢B  
+Eƒp[ƒeƒBƒVƒ‡ƒ“ƒL[: tileInfo (•¶Žš—ñ)  
+Eƒ\[ƒgƒL[: md5sum (•¶Žš—ñ)  
 
-  ãƒ¡ãƒ¢ãƒª 4GB
 
-  ãƒãƒ¼ãƒ‰ãƒ‡ã‚£ã‚¹ã‚¯ï¼ˆä½¿ç”¨é‡ï¼‰ 40MB
+**2.tum‚Ì€”õ**  
+ƒ\[ƒXƒR[ƒh‚ÉAmazonS3‚ÌƒoƒPƒbƒg–¼‚âAmazonDynamoDB‚Ìƒe[ƒuƒ‹–¼“™‚ð‹LÚ‚·‚é•K—v‚ª‚ ‚é‚½‚ßAŠJ”­ŠÂ‹«‚ð—pˆÓ‚µ‚Ü‚·B  
 
-  CD-ROMãƒ‰ãƒ©ã‚¤ãƒ–ã€€ä¸è¦
+2-0.Eclipse€”õ  
+EEclipse‚ðƒ_ƒEƒ“ƒ[ƒhAƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢BŒ¾Œê‚ÍJava‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B‰º‹LURLŽQÆ  
+http://mergedoc.osdn.jp/  
+EAWS Toolkit for Eclipse‚ðEclipse‚ÉƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚­‚¾‚³‚¢B‰º‹LURLŽQÆ  
+https://aws.amazon.com/jp/eclipse/  
 
-  ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆç’°å¢ƒã€€å¸¸æ™‚æŽ¥ç¶šã§ãã‚‹ãƒ–ãƒ­ãƒ¼ãƒ‰ãƒãƒ³ãƒ‰ç’°å¢ƒï¼ˆãƒ¢ãƒã‚¤ãƒ«ç«¯æœ«ç­‰ã¯é™¤ãï¼‰ã§ã”åˆ©ç”¨ãã ã•ã„ã€‚
+2-1.Eclipse‚ÌAWS Toolkit for AWS‚Ìƒvƒ‹ƒ_ƒEƒ“ƒƒjƒ…[‚æ‚èAuNew AWS JAVA Projectv‚ð‘I‘ð‚µ‚Ü‚·B  
+2-2.ì¬‚³‚ê‚½ƒvƒƒWƒFƒNƒg“à‚Ìusrcv‚ð‰EƒNƒŠƒbƒN‚µA•\Ž¦‚³‚ê‚½ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[‚©‚çuV‹KvuƒpƒbƒP[ƒWv‚ð‘I‘ð‚µ‚Ü‚·B  
+2-3.•\Ž¦‚³‚ê‚½V‹KƒpƒbƒP[ƒWì¬‰æ–Ê‚É‚Äu–¼‘Ov‚Ì—“‚Étum‚Æ“ü—Í‚µAŠ®—¹ƒ{ƒ^ƒ“‚ð‰Ÿ‰º‚µ‚Ü‚·B  
+2-4.ì¬‚³‚ê‚½tumƒpƒbƒP[ƒW‚ð‰EƒNƒŠƒbƒN‚µA•\Ž¦‚³‚ê‚½ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[‚©‚çuƒGƒNƒXƒvƒ[ƒ‰[‚ÅŠJ‚­v‚ð‘I‘ð‚µ‚Ü‚·B  
+2-5.•\Ž¦‚³‚ê‚½ƒtƒHƒ‹ƒ_‚Éƒ\[ƒXƒR[ƒhˆêŽ®‚ðŠi”[‚µAEclipse‚ðÄ‹N“®‚µ‚Ü‚·B  
+2-6.“Ç‚Ýž‚Ü‚ê‚½ƒ\[ƒXƒR[ƒh‚ðŠm”F‚µA"input your bucket name"‚âinput your table name"‚Æ‚ ‚é‰ÓŠ‚ðu1.AWS‚Ì€”õv‚Åì¬‚µ‚½–¼‘O‚É•ÏX‚µ‚Ü‚·B
 
-  
-</markdown></p>
+# ƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚Ì•û–@
+
+**1.Eclipse‚©‚çŽÀs‚·‚é•û–@**  
+1-1.Eclipse‚ð‹N“®‚µ‚Ü‚·ButumŽg—p€”õv2-1‚Åì¬‚µ‚½ƒvƒƒWƒFƒNƒg‚ð‰EƒNƒŠƒbƒN‚µA•\Ž¦‚³‚ê‚½ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[‚©‚çuƒGƒNƒXƒvƒ[ƒ‰[‚ÅŠJ‚­v‚ð‘I‘ð‚µ‚Ü‚·B  
+1-2.•\Ž¦‚³‚ê‚½ƒtƒHƒ‹ƒ_‚ÉParams.xml‚ðŠi”[‚µ‚Ü‚·BbinƒfƒBƒŒƒNƒgƒŠ“à‚ÉAwsCredentials.properties‚ðŠi”[‚µ‚Ü‚·B  
+1-3.utumŽg—p€”õv2-1‚Åì¬‚µ‚½ƒvƒƒWƒFƒNƒg‚ð‰EƒNƒŠƒbƒN‚µA•\Ž¦‚³‚ê‚½ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[‚©‚çuŽÀsv uŽÀs‚Ì\¬v‚ð‘I‘ð‚µ‚Ü‚·B  
+1-4.•\Ž¦‚³‚ê‚½ŽÀs\¬ƒƒjƒ…[‚©‚çAuJavaƒAƒvƒŠƒP[ƒVƒ‡ƒ“v‚ð‰EƒNƒŠƒbƒN‚µAuV‹Kv‚ð‘I‘ð‚µ‚Ü‚·B  
+1-5.•\Ž¦‚³‚ê‚½V‹K\¬‚ÌuƒƒCƒ“vƒ^ƒu‚ÅAuŽQÆvƒ{ƒ^ƒ“‚ð‰Ÿ‰º‚µAutumŽg—p€”õv2-1‚Åì¬‚µ‚½ƒvƒƒWƒFƒNƒg‚ð‘I‘ð‚µ‚Ü‚·B  
+1-6.uˆø”vƒ^ƒu“à‚ÌuƒvƒƒOƒ‰ƒ€‚Ìˆø”v‚É‰º‹L‚ðŽQl‚É[‘æˆêˆø”] [‘æ“ñˆø”]‚ð‹L“ü‚µ‚Ü‚·B  
+
+—á: C:\Users\Administrator\up\xyz\ƒtƒHƒ‹ƒ_‚ÉƒAƒbƒvƒ[ƒh‚·‚éƒ^ƒCƒ‹‚ªŠi”[‚³‚ê‚Ä‚¢‚éê‡  
+tum C:\Users\Administrator\up\xyz
+
+**2.ƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚©‚çŽÀs‚·‚é•û–@**  
+2-1.Eclipse‚ð‹N“®‚µ‚Ü‚·ButumŽg—p€”õv2-1‚Åì¬‚µ‚½ƒvƒƒWƒFƒNƒg‚ð‰EƒNƒŠƒbƒN‚µA•\Ž¦‚³‚ê‚½ƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[‚©‚çuƒGƒNƒXƒ|[ƒgv‚ð‘I‘ð‚µ‚Ü‚·B  
+2-2.uŽÀs‰Â”\jarƒtƒ@ƒCƒ‹v‚ð‘I‘ð‚µA”CˆÓ‚ÌƒGƒNƒXƒ|[ƒgæ‚ðÝ’è‚µ‚Ü‚·B  
+2-3.uƒ‰ƒCƒuƒ‰ƒŠ[ˆ—v‚Íu¶¬‚³‚ê‚éJAR‚É•K{ƒ‰ƒCƒuƒ‰ƒŠ[‚ðƒpƒbƒP[ƒWv‚ð‘I‘ð‚µ‚Ü‚·B  
+2-4.uŠ®—¹vƒ{ƒ^ƒ“‚ð‰Ÿ‰º‚µ‚Ü‚·B  
+2-5.2-2‚ÅÝ’è‚µ‚½ƒGƒNƒXƒ|[ƒgæ‚ÉAParams.xml‚ÆAwsCredentials.properties‚ðŠi”[‚µ‚Ü‚·B  
+2-6.ƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚ÅƒGƒNƒXƒ|[ƒgæƒtƒHƒ‹ƒ_‚ÉˆÚ“®‚µA‰º‹LƒRƒ}ƒ“ƒh‚ðŽÀs‚µ‚Ü‚·B  
+java -jar tum [‘æˆêˆø”] [‘æ“ñˆø”]  
+‘æˆêˆø”‚É‚ÍtumA‘æ“ñˆø”‚É‚ÍƒAƒbƒvƒ[ƒh‚·‚éƒ^ƒCƒ‹‚ª‘¶Ý‚·‚éƒtƒHƒ‹ƒ_‚Ü‚Å‚ÌƒpƒX‚ð‹L“ü‚µ‚Ä‚­‚¾‚³‚¢B  
+—á: C:\Users\Administrator\up\xyz\ƒtƒHƒ‹ƒ_‚ÉƒAƒbƒvƒ[ƒh‚·‚éƒ^ƒCƒ‹‚ªŠi”[‚³‚ê‚Ä‚¢‚éê‡  
+java -jar tum.jar tum C:\Users\Administrator\up\xyz@@
+
+# –Ú˜^‹y‚ÑƒRƒRƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚ÌŽd‘g‚Ý
+–Ú˜^‹y‚ÑƒRƒRƒ^ƒCƒ‹‚ÌÚ‚µ‚¢Žd—l‚Í‰º‹LURL‚ð‚²Šm”F‚­‚¾‚³‚¢B  
+https://github.com/gsi-cyberjapan/mokuroku-spec  
+https://github.com/gsi-cyberjapan/cocotile-spec  
+
+**1.–Ú˜^ƒAƒbƒvƒ[ƒh‚ÌŽd‘g‚Ý**  
+–Ú˜^‚É‘‚«ž‚Ü‚ê‚éƒf[ƒ^‚ÍƒpƒX,ÅIXVŽž,ƒTƒCƒY,MD5SUM‚Å‚·B  
+‚»‚ê‚ç‚Ìƒf[ƒ^‚ðƒ^ƒCƒ‹Ží–ˆ‚É1ƒ^ƒCƒ‹‚¸‚ÂS3‚æ‚èŽæ“¾‚µA1s‚¸‚Â‘‚«o‚·Ž–‚Åmokuroku.csv‚ðì¬‚µ‚Ü‚·B  
+mokuroku.csvì¬Œã‚Ígzip‚É‚Äˆ³k‚µAS3‚Ì{t}iƒ^ƒCƒ‹ŽíjƒtƒHƒ‹ƒ_‚Ì’¼‰º‚ÉƒAƒbƒvƒ[ƒh‚³‚ê‚Ü‚·B  
+
+ŽÀsƒRƒ}ƒ“ƒh  
+java -jar  [‘æˆêˆø”] [‘æ“ñˆø”]  
+‘æˆêˆø”‚É‚ÍmokurokuA‘æ“ñˆø”‚É‚ÍˆêŽžŽg—pƒtƒHƒ‹ƒ_‚ÌƒpƒX‚ð‹L“ü‚µ‚Ä‚­‚¾‚³‚¢B  
+‘æ“ñˆø”‚ÅŽw’è‚³‚ê‚½ƒtƒHƒ‹ƒ_‚ðŽg—p‚µ‚Ämokuroku‚ðì¬/ƒAƒbƒvƒ[ƒh‚µ‚Ü‚·B  
+—á: C:\tempƒtƒHƒ‹ƒ_‚ðˆêŽžŽg—pƒtƒHƒ‹ƒ_‚Æ‚·‚éê‡  
+java -jar tum.jar mokuroku C:\temp@@
+ƒq[ƒvƒƒ‚ƒŠ‚ÌÅ‘å’l‚Í512mˆÈã„§  
+
+**2.ƒRƒRƒ^ƒCƒ‹ƒAƒbƒvƒ[ƒh‚ÌŽd‘g‚Ý**  
+ƒRƒRƒ^ƒCƒ‹‚É‘‚«ž‚Ü‚ê‚éƒf[ƒ^‚Í‚»‚ÌÀ•W‚É‘¶Ý‚·‚éƒ^ƒCƒ‹‚ÌŽí—Þ‚Å‚·B  
+ƒ^ƒCƒ‹‚ÌŽí—Þ–ˆ‚É–Ú˜^‚ðŽQÆ‚µAÀ•W–ˆ‚ÉƒRƒRƒ^ƒCƒ‹‚ðì¬A‘‚«o‚µ‚ðs‚¢‚Ü‚·B  
+ƒRƒRƒ^ƒCƒ‹ì¬Œã‚ÍAƒoƒPƒbƒg’¼‰º‚ÌcocotileƒtƒHƒ‹ƒ_‚ÉÀ•W–ˆ‚ÌƒtƒHƒ‹ƒ_‚ðì¬‚µA‚»‚ÌƒtƒHƒ‹ƒ_‚ÉƒAƒbƒvƒ[ƒh‚µ‚Ü‚·B  
+
+ŽÀsƒRƒ}ƒ“ƒh  
+java -jar  [‘æˆêˆø”] [‘æ“ñˆø”]  
+‘æˆêˆø”‚É‚ÍcocotileA‘æ“ñˆø”‚É‚ÍˆêŽžŽg—pƒtƒHƒ‹ƒ_‚ÌƒpƒX‚ð‹L“ü‚µ‚Ä‚­‚¾‚³‚¢B  
+‘æ“ñˆø”‚ÅŽw’è‚³‚ê‚½ƒtƒHƒ‹ƒ_‚ðŽg—p‚µ‚Äcocotile‚ªì¬/ƒAƒbƒvƒ[ƒh‚³‚ê‚Ü‚·BƒRƒRƒ^ƒCƒ‹ì¬—pˆêŽžƒtƒ@ƒCƒ‹‚à“¯ƒtƒHƒ‹ƒ_‚Éì¬‚³‚ê‚Ü‚·B    
+—á: C:\cocotempƒtƒHƒ‹ƒ_‚ðˆêŽžŽg—pƒtƒHƒ‹ƒ_‚Æ‚·‚éê‡  
+java -jar tum.jar mokuroku C:\cocotemp@@
+ƒq[ƒvƒƒ‚ƒŠ‚ÌÅ‘å’l‚Í512mˆÈã„§  
+
+# “®ìŠÂ‹«‚É‚Â‚¢‚Ä
+
+‰º‹LŠÂ‹«‚É‚Ä“®ìŠm”FÏ‚Ý‚Å‚·B
+‚È‚¨A‘S‚Ä‚ÌŠÂ‹«‚É‚¨‚¯‚é“®ì‚ð•Ûá‚·‚é‚à‚Ì‚Å‚Í‚ ‚è‚Ü‚¹‚ñB
+
+- Windows7 32bit
+- ƒƒ‚ƒŠ 4GB
+- ƒn[ƒhƒfƒBƒXƒNiŽg—p—Êj 40MB
+- CD-ROMƒhƒ‰ƒCƒu@•s—v
+- ƒCƒ“ƒ^[ƒlƒbƒgŠÂ‹« - íŽžÚ‘±‚Å‚«‚éƒuƒ[ƒhƒoƒ“ƒhŠÂ‹«iƒ‚ƒoƒCƒ‹’[––“™‚Íœ‚­j‚Å‚²—˜—p‚­‚¾‚³‚¢B
+- Java ƒo[ƒWƒ‡ƒ“1.8.0  ƒq[ƒvƒƒ‚ƒŠƒTƒCƒY‚Í512m‚É‚ÄŽÀs
+
+# ‚²Žg—pŽž‚Ì‚²’ˆÓ  
+**tumŽÀsŽž**  
+- ‘æ“ñˆø”‚ÅŽw’è‚·‚éxyz‚Ü‚Å‚ÌƒpƒX‚ÉAuxyzv‚Æ‚¢‚¤•¶Žš—ñ‚ðŠÜ‚Ü‚È‚¢‚æ‚¤‚¨Šè‚µ‚Ü‚·B  
+—áj  
+³C:\test\123\xyz  
+ŒëC:\test\xyz123\xyz  
+
+- xyzƒtƒHƒ‹ƒ_‚Æ“¯‚¶ˆÊ’u‚Éuxyzv‚Æ‚¢‚¤•¶Žš—ñ‚ðŠÜ‚ÞƒtƒHƒ‹ƒ_‚ð’u‚©‚È‚¢‚æ‚¤‚¨Šè‚¢‚µ‚Ü‚·B  
+—áj  
+³C:\test\123ƒtƒHƒ‹ƒ_‚ÉuxyzvƒtƒHƒ‹ƒ_‚Ì‚Ý  
+ŒëC:\test\123ƒtƒHƒ‹ƒ_‚ÉuxyzvƒtƒHƒ‹ƒ_‚Æuold_xyzvƒtƒHƒ‹ƒ_‚ª‘¶Ý  
+
+**cocotileŽÀsŽž**@@
+- ‘æ“ñˆø”‚ÅŽw’è‚·‚éƒhƒ‰ƒCƒu‚Ì‹ó‚«—e—Ê‚ª500GBˆÈã‚Å‚ ‚éŽ–‚ð‚²Šm”F‚­‚¾‚³‚¢B•K—v—e—Ê‚Í‘Œ¸‚·‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B  
+
+- “¯ˆêŠÂ‹«‚Åcocotile‚ð“ñd‚ÉŽÀs‚µ‚È‚¢‚æ‚¤‚¨Šè‚¢‚µ‚Ü‚·B  
+
+- cocotileŽÀs‘O‚ÉA‘æ“ñˆø”‚ÅŽw’è‚·‚éƒtƒHƒ‹ƒ_“à‚ÉucocotilevƒtƒHƒ‹ƒ_‚ª‘¶Ý‚µ‚È‚¢Ž–‚ðŠm”F‚µA‘¶Ý‚·‚éê‡‚Ííœ‚³‚ê‚Ü‚·‚æ‚¤‚¨Šè‚¢‚µ‚Ü‚·B  
+
+- ˆêŽžƒtƒHƒ‹ƒ_‚Ü‚Å‚ÌƒpƒX‚Éucocotilev‚Æ‚¢‚¤•¶Žš—ñ‚ðŠÜ‚Ü‚È‚¢‚æ‚¤‚¨Šè‚¢‚µ‚Ü‚·B  
+—áj  
+³C:\cocotemp\  
+ŒëC:\cocotile\cocotemp\  
+ 
+- ˆêŽžƒtƒHƒ‹ƒ_“à‚É‚ÍƒvƒƒOƒ‰ƒ€‚ªŽg—p‚·‚éˆêŽžƒtƒ@ƒCƒ‹‚ªì¬‚³‚ê‚Ü‚·BƒvƒƒOƒ‰ƒ€I—¹‚Ü‚ÅA‚»‚ê‚ç‚ðíœ‚³‚ê‚È‚¢‚æ‚¤‚¨Šè‚¢‚µ‚Ü‚·B  
